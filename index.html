@@ -130,7 +130,6 @@
                     <span>+7 (944) 417-80-40</span>
                 </div>
                 <div class="social-links">
-                    <!-- Оставили только Telegram -->
                     <a href="https://t.me/dmitrybabs" 
                        target="_blank" 
                        rel="noopener noreferrer"
@@ -140,32 +139,51 @@
                     </a>
                 </div>
             </div>
-            <!-- Форма с Formspree (самый простой вариант) -->
+            
+            <!-- Форма с Formspree -->
             <form class="contact-form" 
-                  action="https://formspree.io/f/YOUR_FORM_ID" 
+                  action="https://formspree.io/f/xgoojdbq" 
                   method="POST">
-                <input type="text" 
-                       name="name" 
-                       placeholder="Ваше имя" 
-                       required>
-                <input type="email" 
-                       name="email" 
-                       placeholder="Email" 
-                       required>
-                <textarea name="message" 
-                          placeholder="Сообщение" 
-                          rows="5" 
-                          required></textarea>
+                
+                <!-- Поле для имени -->
+                <div class="form-group">
+                    <input type="text" 
+                           name="name" 
+                           placeholder="Ваше имя" 
+                           required>
+                </div>
+                
+                <!-- Поле для email -->
+                <div class="form-group">
+                    <input type="email" 
+                           name="email" 
+                           placeholder="Ваш Email" 
+                           required>
+                </div>
+                
+                <!-- Поле для сообщения -->
+                <div class="form-group">
+                    <textarea name="message" 
+                              placeholder="Ваше сообщение" 
+                              rows="5" 
+                              required></textarea>
+                </div>
+                
                 <!-- Скрытые поля для настройки -->
                 <input type="hidden" 
-                       name="_replyto" 
-                       value="dmitry.babs@gmail.com">
-                <input type="hidden" 
                        name="_subject" 
-                       value="Новое сообщение с портфолио">
+                       value="Новое сообщение с портфолио Дмитрия">
                 <input type="hidden" 
                        name="_language" 
                        value="ru">
+                <input type="hidden" 
+                       name="_replyto" 
+                       value="dmitry.babs@gmail.com">
+                
+                <!-- Защита от спама -->
+                <input type="text" 
+                       name="_gotcha" 
+                       style="display:none;">
                 
                 <button type="submit" class="btn btn-primary">
                     Отправить сообщение
@@ -175,11 +193,11 @@
     </div>
 </section>
 
-    <!-- Футер -->
-    <footer class="footer">
-        <p>&copy; 2026 год , спасибо за внимание!</p>
-    </footer>
+<!-- Футер -->
+<footer class="footer">
+    <p>&copy; 2026 год, спасибо за внимание!</p>
+</footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
