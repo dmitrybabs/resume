@@ -187,9 +187,15 @@ section {
 /* Портфолио - УВЕЛИЧЕННЫЕ ИЗОБРАЖЕНИЯ */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Теперь один проект занимает всю строку */
+    grid-template-columns: 1fr; /* Один проект в строку */
     gap: 40px;
     margin-top: 30px;
+}
+
+@media (min-width: 1200px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* На больших экранах тоже один в строку для больших фото */
+    }
 }
 
 .portfolio-item {
