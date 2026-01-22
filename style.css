@@ -23,7 +23,7 @@ body {
 }
 
 .container {
-    max-width: 1400px; /* Увеличил для больших изображений */
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -184,18 +184,252 @@ section {
     transition: width 1s ease-in-out;
 }
 
+/* Резюме и Timeline */
+.resume {
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.resume::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%236c63ff" opacity="0.03"><circle cx="25" cy="25" r="5"/><circle cx="75" cy="75" r="5"/><circle cx="50" cy="50" r="3"/></svg>');
+    background-size: 200px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 70px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-date {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 120px;
+    padding: 8px 15px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+    z-index: 2;
+}
+
+.timeline-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.timeline-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.timeline-header h3 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.timeline-subtitle {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.timeline-description {
+    line-height: 1.7;
+    color: #555;
+}
+
+.lead {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 25px;
+    padding: 15px;
+    background: linear-gradient(90deg, rgba(108, 99, 255, 0.05) 0%, rgba(108, 99, 255, 0.02) 100%);
+    border-radius: 10px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.experience-block {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f9f9ff;
+    border-radius: 10px;
+    border: 1px solid #e6e6ff;
+}
+
+.experience-block h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.experience-block h4 i {
+    font-size: 1.2rem;
+}
+
+.philosophy-block {
+    margin: 25px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #fff8e1 0%, #fff3cd 100%);
+    border-radius: 10px;
+    border-left: 4px solid #ffc107;
+}
+
+.philosophy-block h4 {
+    color: #d4a017;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tech-experiment {
+    margin: 25px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-radius: 10px;
+    border-left: 4px solid #4caf50;
+}
+
+.tech-experiment h4 {
+    color: #2e7d32;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.experiment-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.experiment-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.experiment-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s ease;
+}
+
+.skill-item:hover {
+    transform: translateX(5px);
+    border-color: var(--primary-color);
+}
+
+.skill-item i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+.skill-item span {
+    font-weight: 500;
+    color: #444;
+}
+
+.timeline-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.timeline-tech .tech-tag {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
 /* Портфолио - УВЕЛИЧЕННЫЕ ИЗОБРАЖЕНИЯ */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Один проект в строку */
+    grid-template-columns: 1fr;
     gap: 40px;
     margin-top: 30px;
-}
-
-@media (min-width: 1200px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr; /* На больших экранах тоже один в строку для больших фото */
-    }
 }
 
 .portfolio-item {
@@ -217,8 +451,8 @@ section {
 .project-images-large {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px; /* Увеличил отступ между фото */
-    height: 400px; /* Увеличил высоту в 2 раза (было 250px) */
+    gap: 20px;
+    height: 400px;
     border-radius: 15px 15px 0 0;
     overflow: hidden;
     padding: 20px;
@@ -245,7 +479,7 @@ section {
 .project-img-large {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Заполняет весь контейнер */
+    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
@@ -325,6 +559,52 @@ section {
     line-height: 1.6;
     margin-bottom: 20px;
     opacity: 0.95;
+}
+
+/* Стили для списка особенностей проекта (третий проект) */
+.project-features {
+    margin: 15px 0;
+    padding-left: 0;
+}
+
+.project-features p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.project-features i {
+    color: #4CAF50;
+    font-size: 0.9rem;
+}
+
+/* Контейнер для нескольких ссылок */
+.project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* Стили для ссылки на Telegram приложение */
+.telegram-app-link {
+    background: #0088cc !important;
+}
+
+.telegram-app-link:hover {
+    background: #0077b5 !important;
+}
+
+/* Стили для ссылки на веб-приложение */
+.web-app-link {
+    background: #6c63ff !important;
+}
+
+.web-app-link:hover {
+    background: #4a44c6 !important;
 }
 
 /* Ссылка в портфолио */
@@ -456,7 +736,79 @@ section {
     opacity: 0.9;
 }
 
-/* Адаптивность */
+/* Адаптивность для резюме */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-item {
+        padding-left: 50px;
+    }
+    
+    .timeline-date {
+        width: 100px;
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+    
+    .timeline-content {
+        padding: 20px;
+    }
+    
+    .timeline-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+        padding: 12px;
+    }
+    
+    .experience-block,
+    .philosophy-block,
+    .tech-experiment {
+        padding: 15px;
+    }
+    
+    .skills-list {
+        gap: 8px;
+    }
+    
+    .skill-item {
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline::before {
+        left: 15px;
+    }
+    
+    .timeline-item {
+        padding-left: 40px;
+    }
+    
+    .timeline-date {
+        width: 85px;
+        font-size: 0.75rem;
+    }
+    
+    .timeline-content {
+        padding: 15px;
+    }
+    
+    .timeline-tech {
+        gap: 8px;
+    }
+    
+    .timeline-tech .tech-tag {
+        padding: 5px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Адаптивность для всего сайта */
 @media (max-width: 1200px) {
     .container {
         max-width: 100%;
@@ -500,7 +852,7 @@ section {
     
     .project-images-large {
         grid-template-columns: 1fr;
-        height: 500px; /* На мобилках ставим вертикально */
+        height: 500px;
         gap: 10px;
     }
     
@@ -571,5 +923,10 @@ section {
     
     .contact-item {
         padding: 15px;
+    }
+    
+    .project-links {
+        flex-direction: column;
+        gap: 10px;
     }
 }
