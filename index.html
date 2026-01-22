@@ -116,34 +116,64 @@
     </section>
 
     <!-- Контакты -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Контакты</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>dmitry.babs@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+7 (944) 417-80-40</span>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                    </div>
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">Контакты</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>dmitry.babs@gmail.com</span>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Ваше имя" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Сообщение" rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">Отправить</button>
-                </form>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+7 (944) 417-80-40</span>
+                </div>
+                <div class="social-links">
+                    <!-- Оставили только Telegram -->
+                    <a href="https://t.me/dmitrybabs" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       title="Написать в Telegram"
+                       class="telegram-link">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </div>
             </div>
+            <!-- Форма с Formspree (самый простой вариант) -->
+            <form class="contact-form" 
+                  action="https://formspree.io/f/YOUR_FORM_ID" 
+                  method="POST">
+                <input type="text" 
+                       name="name" 
+                       placeholder="Ваше имя" 
+                       required>
+                <input type="email" 
+                       name="email" 
+                       placeholder="Email" 
+                       required>
+                <textarea name="message" 
+                          placeholder="Сообщение" 
+                          rows="5" 
+                          required></textarea>
+                <!-- Скрытые поля для настройки -->
+                <input type="hidden" 
+                       name="_replyto" 
+                       value="dmitry.babs@gmail.com">
+                <input type="hidden" 
+                       name="_subject" 
+                       value="Новое сообщение с портфолио">
+                <input type="hidden" 
+                       name="_language" 
+                       value="ru">
+                
+                <button type="submit" class="btn btn-primary">
+                    Отправить сообщение
+                </button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Футер -->
     <footer class="footer">
